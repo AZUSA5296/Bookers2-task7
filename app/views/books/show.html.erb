@@ -34,14 +34,14 @@
         </tr>
       </table>
 
-      <table class="table" id="comment_list">
+      <table class="comment_<%= @book.id %>">
 		 	  <%= render 'book_comments/comment', book: @book %>
 		  </table>
 
 		  <div class="row">
-			  <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-				  <%= f.text_area :comment, class: "col-xs-10",id: "book_comment_comment" %></br>
-				  <%= f.submit %>
+		    <%= form_with(model:[@book, @book_comment]) do |f| %>
+          <%= f.text_area :comment, class: "col-xs-10" %></br>
+          <%= f.submit %>
 			  <% end %>
 		  </div>
 

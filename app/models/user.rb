@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower # 自分をフォローしている人
 
   has_many :favorites, dependent: :destroy
+  has_many :favorite_books, through: :favorites, source: :book
+
   has_many :book_comments, dependent: :destroy
   attachment :profile_image, destroy: false
 

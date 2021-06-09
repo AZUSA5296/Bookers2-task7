@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :ensure_correct_user, only: [:update, :edit]
+  before_action :ensure_correct_user, only: [:update, :edit, :destroy]
 
   def show
     @newbook = Book.new
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :rate)
   end
 
   def ensure_correct_user

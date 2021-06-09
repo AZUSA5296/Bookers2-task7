@@ -30,4 +30,6 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
+  resources :groups # グループ機能
+
 end

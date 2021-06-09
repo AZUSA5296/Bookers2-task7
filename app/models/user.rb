@@ -18,6 +18,9 @@ class User < ApplicationRecord
   has_many :book_comments, dependent: :destroy
   attachment :profile_image, destroy: false
 
+  has_many :group_users
+  has_many :groups, through: :group_users
+
   # フォローする
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)

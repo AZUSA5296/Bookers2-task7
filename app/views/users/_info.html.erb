@@ -1,17 +1,17 @@
 <table class='table'>
-  <tr><%= attachment_image_tag(@user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+  <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
   <tr>
 	  <th>name</th>
-	  <th><%= @user.name %></th>
+	  <th><%= user.name %></th>
   </tr>
   <tr>
 	  <th>introduction</th>
-	  <th><%= @user.introduction %></th>
+	  <th><%= user.introduction %></th>
   </tr>
   <tr>
     <th>follows</th>
     <th>
-      <%= link_to following_user_path(@user) do %>
+      <%= link_to following_user_path(user) do %>
         <%= user.following.count %>
       <% end %>
     </th>
@@ -19,7 +19,7 @@
   <tr>
     <th>followers</th>
     <th>
-      <%= link_to followers_user_path(@user) do %>
+      <%= link_to followers_user_path(user) do %>
         <%= user.followers.count %>
       <% end %>
     </th>
